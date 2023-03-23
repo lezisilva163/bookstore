@@ -22,13 +22,17 @@ class App {
         App.#database.saveAuthor(author)
     }
 
-    getAuthor() {
+    getAuthors() {
         return App.#database.find('authors')
     }
 
     createBook(title, synopsis, genre, pages, author, description, price, inStock) {
         const book = new Book(title, synopsis, genre, pages, author, description, price, inStock)
         App.#database.saveBook(book)
+    }
+
+    getBooks() {
+        return App.#database.find('books')
     }
 
     addBook(bookName, quantity) {
